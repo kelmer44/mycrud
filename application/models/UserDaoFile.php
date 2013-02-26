@@ -75,7 +75,7 @@ class UserDaoFile implements UserDao {
 	private function getMaxId(){
 		$id = 0;
 		foreach($this->userList as $key => $value){
-			echo "KEY".$key."<br/>";
+			//echo "KEY".$key."<br/>";
 			if($key > $id)
 				$id = $key;
 		}
@@ -86,9 +86,9 @@ class UserDaoFile implements UserDao {
 	
 	
 	private function commitToFile(){
-		echo "<pre>";
+		/*echo "<pre>";
 			print_r($this->userList);
-		echo "</pre>";
+		echo "</pre>";*/
 		$data ="";
 		foreach($this->userList as $user){
 			$data.=$user->id."|";
@@ -102,7 +102,7 @@ class UserDaoFile implements UserDao {
 			$data.=implode(",",$user->pets)."|";
 			$data.=$user->gender."|";
 			$data.=$user->picture;
-			$data."\r\n";
+			$data.="\r\n";
 		}
 		//echo $data;
 		file_put_contents(self::$filename, $data);
