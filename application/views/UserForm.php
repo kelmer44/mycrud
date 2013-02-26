@@ -45,9 +45,9 @@
 			</select></li>
 
 			<li>Pets: 
-				<input type="checkbox" name="pets[]" value="Dog" /> Dog 
-				<input	type="checkbox" name="pets[]" value="Cat" /> Cat 
-				<input type="checkbox"	name="pets[]" value="Monkey" /> Monkey
+				<input type="checkbox" name="pets[]" value="Dog" <?php if(in_array("Dog", $user->pets, true)) echo "checked=\"checked\""; ?>/> Dog 
+				<input	type="checkbox" name="pets[]" value="Cat" <?php if(in_array("Cat", $user->pets, true)) echo "checked=\"checked\""; ?>/> Cat 
+				<input type="checkbox"	name="pets[]" value="Monkey" <?php if(in_array("Monkey", $user->pets, true)) echo "checked=\"checked\""; ?>/> Monkey
 			</li>
 
 			<li>Gender: <input type="radio" name="gender" value="Man" <?php if($user->gender === "M") echo "checked=\"checked\""; ?>/> M <input
@@ -56,7 +56,7 @@
 			</li>
 
 
-			<li>Pic:<img src="<? echo IMGDIR.$user->picture ?>" /><input type="file" name="picture" size="40"></li>
+			<li>Pic:<img height=100 src="<? echo IMGDIR.$user->picture ?>" /><input type="file" name="picture" size="40"></li>
 
 
 			<li><input type="submit" value="Submit" /></li>

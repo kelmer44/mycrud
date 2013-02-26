@@ -38,11 +38,11 @@
 	</tr>
 	<tr>
 		<th>Sports</th>
-		<td><?=$user->sports?></td>
+		<td><?=implode(", ", $user->sports)?></td>
 	</tr>
 	<tr>
 		<th>Pets</th>
-		<td><?=$user->pets?></td>
+		<td><?=implode(", ", $user->pets)?></td>
 	</tr>
 	<tr>
 		<th>Gender</th>

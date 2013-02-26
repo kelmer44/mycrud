@@ -23,7 +23,6 @@
 
 		</tr> 
         <?php
-			
 			 foreach ( $users as $id => $user ) { 
 					echo "<tr>";
 						echo "<td>".$id."</td>";
@@ -33,8 +32,8 @@
 						echo "<td>".$user->description."</td>";
 						echo "<td>".$user->address."</td>";
 						echo "<td>".$user->city."</td>";
-						echo "<td>".$user->sports."</td>";
-						echo "<td>".$user->pets."</td>";
+						echo "<td>".implode(", ", $user->sports)."</td>";
+						echo "<td>".implode(", ", $user->pets)."</td>";
 						echo "<td>".$user->gender."</td>";
 						echo "<td><img height=100 src=\"".IMGDIR.$user->picture."\" /><br />".$user->picture."</td>";
 						echo "<td><a href=\"?action=update&id=".$user->id."\">Update</a>, <a href=\"\">Delete</a></td>";
