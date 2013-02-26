@@ -4,8 +4,10 @@ include_once ("../application/models/UserDaoFile.php");
 
 class Controller {
 	public $dao;
-	public function __construct() {
-		$this->dao = new UserDaoFile ();
+	public function __construct($userFilename) {
+		echo "Reading from: ".$userFilename."<br/>";		
+		
+		$this->dao = new UserDaoFile($userFilename);
 	}
 	public function invoke() {
 		if (! isset ( $_GET ['action'] )) {
@@ -17,7 +19,6 @@ class Controller {
 		switch ($action) {
 			
 			default :
-				echo "Wrong action, defaulting to read";
 			case 'read' :
 				if (! isset ( $_GET ['id'] )) {
 					// no special book is requested, we'll show a list of all available books

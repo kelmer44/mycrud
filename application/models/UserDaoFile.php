@@ -4,17 +4,17 @@ include_once('User.php');
 include_once('UserDao.php');
 
 class UserDaoFile implements UserDao {
-	public static $filename = "usuarios.txt";
 	
-	private $file;
+	private $filename;
 	private $lines;
-	
+
 	private $userList = array();
 	
 	
-	public function __construct(){
+	public function __construct($fileName){
 		
-		$this->lines = file ( self::$filename );
+		$this->filename = $fileName;
+		$this->lines = file ( $this->filename );
 		$i = 0;
 		foreach ($this->lines as $line_num => $line ) {
 			
@@ -105,7 +105,7 @@ class UserDaoFile implements UserDao {
 			$data.="\r\n";
 		}
 		//echo $data;
-		file_put_contents(self::$filename, $data);
+		file_put_contents($this->filename, $data);
 		
 		
 	}
