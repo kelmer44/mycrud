@@ -35,7 +35,7 @@ $lines = file ( "usuarios.txt" );
 foreach ( $lines as $line_num => $line ) {
 	echo "<tr>";
 	$attributes = explode ( "|", $line );
-	$user = new User();
+	//$user = new User();
 	foreach ( $attributes as $clave => $valor ) {
 		echo "<td>";
 		echo $valor;

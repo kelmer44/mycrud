@@ -13,12 +13,17 @@ class Controller {
 	
 	public function invoke()
 	{
-		if (!isset($_GET['book']))
+		if (!isset($_GET['id']))
 		{
 			// no special book is requested, we'll show a list of all available books
 			$users = $this->dao->getUserList();
-			include 'view/booklist.php';
+			include '../application/views/UserList.php';
 		}
-		
+		else {
+			$id = $_GET['id'];
+			$user = $this->dao->getUser($id);
+			include '../application/views/ViewUser.php';
+			//echo "Aquí iría el detalle de usuario";
+		}
 	}
 }
