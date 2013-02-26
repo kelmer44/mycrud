@@ -36,14 +36,14 @@
 						echo "<td>".$user->sports."</td>";
 						echo "<td>".$user->pets."</td>";
 						echo "<td>".$user->gender."</td>";
-						echo "<td>".$user->picture."</td>";
-						echo "<td><a href=\"\">Update</a>, <a href=\"\">Delete</a></td>";
+						echo "<td><img height=100 src=\"".IMGDIR.$user->picture."\" /><br />".$user->picture."</td>";
+						echo "<td><a href=\"?action=update&id=".$user->id."\">Update</a>, <a href=\"\">Delete</a></td>";
 					echo "</tr>";
 			 }
 		?>  
     </table>
     
-    <a href="">Añadir usuario</a>
+    <a href="?action=create">Añadir usuario</a>
 
 </body>
 </html>

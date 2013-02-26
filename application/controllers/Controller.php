@@ -13,17 +13,35 @@ class Controller {
 	
 	public function invoke()
 	{
-		if (!isset($_GET['id']))
-		{
-			// no special book is requested, we'll show a list of all available books
-			$users = $this->dao->getUserList();
-			include '../application/views/UserList.php';
+		if(!isset($_GET['action'])){
+			if (!isset($_GET['id']))
+			{
+				// no special book is requested, we'll show a list of all available books
+				$users = $this->dao->getUserList();
+				include '../application/views/UserList.php';
+			}
+			else {
+				$id = $_GET['id'];
+				$user = $this->dao->getUser($id);
+				include '../application/views/ViewUser.php';
+				//echo "Aquí iría el detalle de usuario";
+			}
 		}
 		else {
-			$id = $_GET['id'];
-			$user = $this->dao->getUser($id);
-			include '../application/views/ViewUser.php';
-			//echo "Aquí iría el detalle de usuario";
+			$action = $_GET['action'];
+			switch($action){
+				case 'update':
+					if(isset($_GET['id'])){
+						$id = $_GET['id'];
+						$user = $this->dao->getUser($id);
+					}
+					else
+						echo "Error: user id not provided";
+				case 'create':
+					include '../application/views/UserForm.php';
+					break;
+				
+			}
 		}
 	}
 }
