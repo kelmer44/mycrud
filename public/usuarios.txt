@@ -1,2 +1,2 @@
-1|Gabriel|kelmer@gmail.com||Hola hola|c\ Boqueixon|coruna|tennis,chess|Dog|Man|logoCNTG.jpg
-1|Gabriel|kelmer@gmail.com||Hola hola|c\ Boqueixon|coruna|tennis,chess|Dog|Man|logoCNTG.jpg
+1|Gabriel|kelmer@gmail.com|xxxxxxx|Guapo, rico y distinguido|c\ Boqueixon|Santiago|tennis,chess|Dog|Man|avatar.jpg
+1|Pancracio|pancra@gmail.com|yyyyyyy|Hermoso como la vida misma|c\ Paraiso|Siuda del visio|tennis,golf|Dog,Cat|Woman|notiene.jpg

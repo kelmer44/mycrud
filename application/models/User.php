@@ -17,22 +17,27 @@ class User {
 	public $picture;
 	
 	
-	public function __construct($id, $name, $email, $password, $description, $address, $city, $sports, $pets, $gender, $picture)
+	public function withAllAttributes($id, $name, $email, $password, $description, $address, $city, $sports, $pets, $gender, $picture)
 	{
-		$this->id = $id;
-		$this->name = $name;
-		$this->email = $description;
-		$this->password = $password;
-		$this->description = $description;
-		$this->address = $address;
-		$this->city = $city;
-		$this->sports = $sports;
-		$this->pets = $pets;
-		$this->gender = $gender;
-		$this->picture = $picture;
+		$instance = new self();
+		$instance->id = $id;
+		$instance->name = $name;
+		$instance->email = $description;
+		$instance->password = $password;
+		$instance->description = $description;
+		$instance->address = $address;
+		$instance->city = $city;
+		$instance->sports = $sports;
+		$instance->pets = $pets;
+		$instance->gender = $gender;
+		$instance->picture = $picture;
+		return $instance;
 	}
 	
-	
+	public function __construct()
+	{
+		
+	}
 	
 }
 
