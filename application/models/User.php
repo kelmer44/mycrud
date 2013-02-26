@@ -16,8 +16,22 @@ class User {
 	public $gender;
 	public $picture;
 	
-	
-	public function withAllAttributes($id, $name, $email, $password, $description, $address, $city, $sports, $pets, $gender, $picture)
+	/**
+	 * 
+	 * @param int $id userId
+	 * @param string $name User name
+	 * @param string $email User email
+	 * @param string $password User password
+	 * @param string $description User description
+	 * @param string $address User postal address
+	 * @param string $city User city or residence
+	 * @param array $sports Sports liked by user
+	 * @param array $pets Pets owned by user
+	 * @param char $gender User gender
+	 * @param string $picture User avatar picture
+	 * @return User
+	 */
+	public static function withAllAttributes($id, $name, $email, $password, $description, $address, $city, $sports, $pets, $gender, $picture)
 	{
 		$instance = new self();
 		$instance->id = $id;

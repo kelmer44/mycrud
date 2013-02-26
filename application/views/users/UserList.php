@@ -36,7 +36,7 @@
 						echo "<td>".implode(", ", $user->pets)."</td>";
 						echo "<td>".$user->gender."</td>";
 						echo "<td><img height=100 src=\"".IMGDIR.$user->picture."\" /><br />".$user->picture."</td>";
-						echo "<td><a href=\"?action=update&id=".$user->id."\">Update</a>, <a href=\"?action=doDelete&id=".$user->id."\">Delete</a></td>";
+						echo "<td><a href=\"?action=update&id=".$user->id."\">Update</a>, <a href=\"?action=delete&id=".$user->id."\">Delete</a></td>";
 					echo "</tr>";
 			 }
 		?>  
