@@ -31,21 +31,6 @@
 include_once("..\application\models\User.php");
 
 
-$lines = file ( "usuarios.txt" );
-foreach ( $lines as $line_num => $line ) {
-	echo "<tr>";
-	$attributes = explode ( "|", $line );
-	//$user = new User();
-	foreach ( $attributes as $clave => $valor ) {
-		echo "<td>";
-		echo $valor;
-		echo "</td>";
-	}
-	echo "<td> <a href=\"\">Update</a>, <a href=\"\">delete</a> </td>";
-	
-	
-	echo "</tr>";
-}
 
 
 ?>
