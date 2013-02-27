@@ -27,8 +27,8 @@
 						<td><?=$user->description?></td>
 						<td><?=$user->address?></td>
 						<td><?=$user->city?></td>
-						<td><?php implode(", ", $user->sports) ?></td>
-						<td><?php implode(", ", $user->pets)?></td>
+						<td><?php echo implode(", ", $user->sports) ?></td>
+						<td><?php echo implode(", ", $user->pets)?></td>
 						<td><?=$user->gender?></td>
 						<td><img height=100 src="<?php echo IMGDIR.$user->picture ?>" /><br /><?=$user->picture?></td>
 						<td><a href="update/<?= $user->id ?>">Update</a>, <a href="delete/<?= $user->id ?>">Delete</a></td>
