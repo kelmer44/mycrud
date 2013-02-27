@@ -45,4 +45,4 @@
 		<th>Picture</th>
 		<td><?=$user->picture?></td>
 	</tr>
-</table>s
+</table>

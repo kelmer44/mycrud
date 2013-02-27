@@ -13,7 +13,9 @@
 	$config = parse_ini_file("../application/config/config.ini", true);
 	$filename = $config['production']['usersFilename'];
 	
-	$controller = new Controller($filename);
+	$controller = new Controller($filename); ?>
+	
+	<?php 
 	$controller->invoke();
 ?>
 

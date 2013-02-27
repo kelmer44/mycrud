@@ -21,7 +21,7 @@
 			 
 					<tr>
 						<td><?=$user->id ?></td>
-						<td><a href=\"".$id."\">"<?=$user->name?></a></td>
+						<td><a href="<?= $id ?>"><?=$user->name?></a></td>
 						<td><?=$user->email?></td>
 						<td><?=$user->password?></td>
 						<td><?=$user->description?></td>

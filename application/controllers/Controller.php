@@ -35,8 +35,10 @@ class Controller {
 				if (isset ( $_GET ['id'] )) {
 					$id = $_GET ['id'];
 					$user = $this->dao->getUser ( $id );
-				} else
+				} else{
 					echo "Error: user id not provided";
+					break;
+				}
 			case 'create' :
 				include '../application/views/users/UserForm.php';
 				break;
