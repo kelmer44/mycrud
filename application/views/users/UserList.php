@@ -17,25 +17,25 @@
 
 		</tr> 
         <?php
-			 foreach ( $users as $id => $user ) { 
-					echo "<tr>";
-						echo "<td>".$id."</td>";
-						echo "<td><a href=\"".$id."\">".$user->name."</a></td>";
-						echo "<td>".$user->email."</td>";
-						echo "<td>".$user->password."</td>";
-						echo "<td>".$user->description."</td>";
-						echo "<td>".$user->address."</td>";
-						echo "<td>".$user->city."</td>";
-						echo "<td>".implode(", ", $user->sports)."</td>";
-						echo "<td>".implode(", ", $user->pets)."</td>";
-						echo "<td>".$user->gender."</td>";
-						echo "<td><img height=100 src=\"".IMGDIR.$user->picture."\" /><br />".$user->picture."</td>";
-						echo "<td><a href=\"update/".$user->id."\">Update</a>, <a href=\"delete/".$user->id."\">Delete</a></td>";
-					echo "</tr>";
-			 }
-		?>  
+			 foreach ( $users as $id => $user ): ?>
+			 
+					<tr>
+						<td><?=$user->id ?></td>
+						<td><a href=\"".$id."\">"<?=$user->name?></a></td>
+						<td><?=$user->email?></td>
+						<td><?=$user->password?></td>
+						<td><?=$user->description?></td>
+						<td><?=$user->address?></td>
+						<td><?=$user->city?></td>
+						<td><?php implode(", ", $user->sports) ?></td>
+						<td><?php implode(", ", $user->pets)?></td>
+						<td><?=$user->gender?></td>
+						<td><img height=100 src="<?php echo IMGDIR.$user->picture ?>" /><br /><?=$user->picture?></td>
+						<td><a href="update/<?= $user->id ?>">Update</a>, <a href="delete/<?= $user->id ?>">Delete</a></td>
+					</tr>
+			 <?php endforeach; ?>  
     </table>
     
-    <a href="?action=create">Añadir usuario</a>
+    <a href="/create">Añadir usuario</a>
 
 
