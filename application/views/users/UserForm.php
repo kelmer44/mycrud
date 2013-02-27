@@ -1,17 +1,11 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Form
-</title>
-</head>
-<body>
+
 <?php if(!isset($user)){ 
 	$user = new User();
 	$user->sports = array();
 	$user->pets = array();
 }
 ?>
-	<form action="index.php?action=save" method="POST" enctype="multipart/form-data">
+	<form action="/save" method="POST" enctype="multipart/form-data">
 		<ul>
 		<input type="hidden" name="action" value="save"/>
 			<li><input type="hidden" name="id" value="<?= $user->id ?>"></input></li>
@@ -74,5 +68,3 @@
 
 
 	</form>
-</body>
-</html>

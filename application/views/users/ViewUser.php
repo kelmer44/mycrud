@@ -1,11 +1,4 @@
-<html>
-<head>
-<title><?= $id; ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
 
-<body>
- 
 <h3>Detalle de usuario <?= $id; ?></h3>
 <table>
 	<tr>
@@ -52,6 +45,4 @@
 		<th>Picture</th>
 		<td><?=$user->picture?></td>
 	</tr>
-</table>
-</body>
-</html>
+</table>s

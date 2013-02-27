@@ -1,3 +1,10 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Form
+</title>
+</head>
+<body>
 <?php
 	include_once("../application/controllers/Controller.php");
 	
@@ -9,3 +16,6 @@
 	$controller = new Controller($filename);
 	$controller->invoke();
 ?>
+
+</body>
+</html>
