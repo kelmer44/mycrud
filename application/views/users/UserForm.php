@@ -56,9 +56,9 @@
 			</li>
 
 			<li>Gender: 
-				<input type="radio" name="gender" value="Man" <?php if($user->gender === "M") echo "checked=\"checked\""; ?>/> M <input
-				type="radio" name="gender" value="Woman" <?php if($user->gender === "F") echo "checked=\"checked\""; ?>/> F <input type="radio"
-				name="gender" value="Other" <?php if($user->gender === "O") echo "checked=\"checked\""; ?>/> O
+				<input type="radio" name="gender" value="Man" <?php if($user->gender === "Man") echo "checked=\"checked\""; ?>/> M <input
+				type="radio" name="gender" value="Woman" <?php if($user->gender === "Woman") echo "checked=\"checked\""; ?>/> F <input type="radio"
+				name="gender" value="Other"  <?php if($user->gender === "Other") echo "checked=\"checked\""; ?>/> O
 			</li>
 
 
