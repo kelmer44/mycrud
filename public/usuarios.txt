@@ -1,2 +1,4 @@
-1|gsdfasdf|||||santiago|||O|
-2|Gabriel|||||santiago|||O|
+1|Gabriel|Guapo rico y distinguido|xxxxxx|Guapo rico y distinguido|boqueixon 7 |santiago|golf,chess|Cat|O|descarg3a.jpg
+2|Mariano|inshidias, esho shon inshidias|rajyo|inshidias, esho shon inshidias|genova|vigo|tennis,golf|Dog|O|descarga (1).jpg
+3|Maria Dolores de Cospedal|De cospedal|dolores|De cospedal|genova|ourense|football,tennis,golf,chess|Dog,Cat,Monkey|O|descarga.jpg
+4|María Dolores 2|Así soy yo||Así soy yo|Génova|ourense|football,tennis,chess|Cat|Woman|descarga.jpg
