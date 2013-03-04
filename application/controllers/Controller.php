@@ -1,13 +1,14 @@
 <?php
 include_once ("../application/models/User.php");
-include_once ("../application/models/UserDaoFile.php");
+include_once ("../application/models/UserDaoMySQL.php");
 
 class Controller {
 	public $dao;
-	public function __construct($userFilename) {
-		echo "Reading from: ".$userFilename."<br/>";		
+	public function __construct($config) {
+		//echo "Reading from: ".$config['production']['usersFilename']."<br/>";		
 		
-		$this->dao = new UserDaoFile($userFilename);
+		//$this->dao = new UserDaoFile($userFilename);
+		$this->dao = new UserDaoMySQL($config);
 	}
 	public function invoke() {
 		if (! isset ( $_GET ['action'] )) {
@@ -52,18 +53,20 @@ class Controller {
 				}
 				break;
 			case 'save' :
-				
-				$filename=$_FILES['picture']['tmp_name'];
-				$destinationPath  = "/uploads";
-				$name = $_FILES['picture']['name'];
-				$destination = $_SERVER['DOCUMENT_ROOT'].$destinationPath."/".$name;
+				if(isset($_FILES['picture']['tmp_name'])){
+					$filename=$_FILES['picture']['tmp_name'];
+					$destinationPath  = "/uploads";
+					$name = $_FILES['picture']['name'];
+					echo $name;
+					$destination = $_SERVER['DOCUMENT_ROOT'].$destinationPath."/".$name;
 				//mover imagen a uploads
 				/*if(file_exists($destination)){
 					$destination = getDestinationFileName($destination);
 				}*/
-				move_uploaded_file($filename, $destination);
-				
+					move_uploaded_file($filename, $destination);
+				}
 				$user = User::withAllAttributes($_POST['id'], $_POST['name'], $_POST['email'], $_POST['password'],$_POST['description'],$_POST['address'],$_POST['city'],isset($_POST['sports'])?$_POST['sports']:array(),isset($_POST['pets'])?$_POST['pets']:array(),isset($_POST['gender'])?$_POST['gender']:'O',isset($_FILES['picture']['name'])?$_FILES['picture']['name']:'none.jpg');
+				
 				$this->dao->addOrUpdateUser ( $user );
 				break;
 		}

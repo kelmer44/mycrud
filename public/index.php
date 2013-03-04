@@ -11,9 +11,8 @@
 	define('IMGDIR', "/uploads/");
 
 	$config = parse_ini_file("../application/config/config.ini", true);
-	$filename = $config['production']['usersFilename'];
 	
-	$controller = new Controller($filename); ?>
+	$controller = new Controller($config); ?>
 	
 	<?php 
 	$controller->invoke();
